@@ -47,4 +47,9 @@ public class BinomialDistributionTest {
         
         assertEquals(BigInteger.valueOf(21), binomial(n, k));
     }
+    
+    @Test(expected = IllegalArgumentException.class) 
+    public void n() {
+        new BinomialDistribution(BigInteger.ZERO, BigDecimal.valueOf(0.5));
+    }
 }
