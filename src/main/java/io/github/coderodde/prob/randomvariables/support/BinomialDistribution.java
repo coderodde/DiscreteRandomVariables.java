@@ -12,9 +12,9 @@ public class BinomialDistribution extends DiscreteRandomVariableDistribution {
     private final BigDecimal p;
     private final BigInteger n;
     
-    public BinomialDistribution(BigDecimal p, BigInteger n) {
-        this.p = checkSuccessProbability(p);
+    public BinomialDistribution(BigInteger n, BigDecimal p) {
         this.n = checkNumberOfTrials(n);
+        this.p = checkSuccessProbability(p);
     }
     
     @Override
@@ -39,19 +39,7 @@ public class BinomialDistribution extends DiscreteRandomVariableDistribution {
         return n;
     }
     
-    private static int binomial(int n, int k) {
-        return factorial(n) / factorial(k) / factorial(n - k);
-    }
-    
-    private static int factorial(int n) {
-        if (n == 0) {
-            return 1;
-        }
-        
-        return n * factorial(n - 1);
-    }
-    
-    private static BigInteger checkNumberOfTrials(BigInteger n) {
+    protected static BigInteger checkNumberOfTrials(BigInteger n) {
         if (n.compareTo(BigInteger.ONE) < 0) {
             throw new IllegalArgumentException(
                 String.format("n(%d) is too small. Must be at least 1.", n));

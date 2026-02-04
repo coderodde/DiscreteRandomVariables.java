@@ -35,7 +35,7 @@ public abstract class DiscreteRandomVariableDistribution {
             
         }
         
-        if (p.compareTo(BigDecimal.ONE) >= 1) {
+        if (p.compareTo(BigDecimal.ONE) >= 0) {
             String exceptionMessage = 
                 String.format(
                     "The input success probability is too large: %f. Must " + 
@@ -119,7 +119,7 @@ public abstract class DiscreteRandomVariableDistribution {
      * 
      * @return the binomial {@code n} over {@code k}.
      */
-    protected static BigInteger binomial(BigInteger n, BigInteger k) {
+    public static BigInteger binomial(BigInteger n, BigInteger k) {
         if (n.equals(BigInteger.ZERO) || k.equals(BigInteger.ZERO)) {
             return BigInteger.ONE;
         }
@@ -129,12 +129,16 @@ public abstract class DiscreteRandomVariableDistribution {
         
         if (a.compareTo(b) < 0) {
             // Once here, k < n - k, (a < b):
-            BigInteger numerator   = extendedFactorial(b, n);
+            BigInteger numerator = 
+                    extendedFactorial(b.add(BigInteger.ONE), n);
+            
             BigInteger denominator = extendedFactorial(BigInteger.ONE, a);
             return numerator.divide(denominator);
         } else {
             // Once here, k >= n - k, (a >= b):
-            BigInteger numerator   = extendedFactorial(a, n);
+            BigInteger numerator = 
+                    extendedFactorial(a.add(BigInteger.ONE), n);
+            
             BigInteger denominator = extendedFactorial(BigInteger.ONE, b);
             return numerator.divide(denominator);
         }
