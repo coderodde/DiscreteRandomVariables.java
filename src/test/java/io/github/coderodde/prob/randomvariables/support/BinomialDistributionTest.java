@@ -14,17 +14,17 @@ public class BinomialDistributionTest {
     private final BinomialDistribution dist = new BinomialDistribution(n, p);
     
     @Test
-    public void testGetProbabilityMass() {
+    public void getProbabilityMass() {
         System.out.println(dist.getProbabilityMass(BigInteger.valueOf(2)));
     }
 
     @Test
-    public void testGetSuccessProbability() {
+    public void getSuccessProbability() {
         assertEquals(p, dist.getSuccessProbability());
     }
     
     @Test
-    public void testGetFailureProbability() {
+    public void getFailureProbability() {
         assertEquals(BigDecimal.ONE.subtract(p), dist.getFailureProbability());
     }
     
@@ -34,7 +34,7 @@ public class BinomialDistributionTest {
     }
     
     @Test
-    public void testBinomial() {
+    public void binomialTest() {
         BigInteger n;
         BigInteger k;
         

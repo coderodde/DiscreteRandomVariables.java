@@ -42,6 +42,9 @@ public class HypergeometricDistribution
         return num.divide(den);
     }
 
+    /**
+     * Checks the sanity of the given parameters.
+     */
     private void checkParameters() {
         if (N.compareTo(BigInteger.ONE) < 0) {
             String exceptionMessage = 

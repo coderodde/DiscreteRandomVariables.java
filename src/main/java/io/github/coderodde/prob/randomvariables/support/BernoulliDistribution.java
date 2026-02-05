@@ -3,6 +3,7 @@ package io.github.coderodde.prob.randomvariables.support;
 import io.github.coderodde.prob.randomvariables.DiscreteRandomVariableDistribution;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Objects;
 
 /**
  * This class implements a Bernoulli distribution.
@@ -21,6 +22,7 @@ public class BernoulliDistribution extends DiscreteRandomVariableDistribution {
      * @param p the probability of success. 
      */
     public BernoulliDistribution(BigDecimal p) {
+        Objects.requireNonNull(p, "The input success probability is null.");
         this.p = checkSuccessProbability(p);
     }
 

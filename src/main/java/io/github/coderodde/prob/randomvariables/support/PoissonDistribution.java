@@ -26,6 +26,9 @@ public class PoissonDistribution extends DiscreteRandomVariableDistribution {
         checkLambda(lambda);
     }
     
+    /**
+     * {@inheritDoc }
+     */
     @Override
     public BigDecimal getProbabilityMass(BigInteger k) {
         BigDecimal term1 = lambda.pow(k.intValue(), MC);
@@ -37,6 +40,11 @@ public class PoissonDistribution extends DiscreteRandomVariableDistribution {
         return term1.multiply(term2, MC).divide(new BigDecimal(factorial), MC);    
     }
 
+    /**
+     * Checks the validity of the lambda parameter.
+     * 
+     * @param lambda the parameter to check. 
+     */
     private void checkLambda(BigDecimal lambda) {
         if (lambda.compareTo(BigDecimal.ZERO) <= 0) {
             String exceptionMessage = 

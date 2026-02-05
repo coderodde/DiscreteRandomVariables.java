@@ -71,17 +71,17 @@ public abstract class DiscreteRandomVariableDistribution {
      * Checks that {@code k} is no larger than {@code max}.
      * 
      * @param k   the value to check.
-     * @param max the upper bound for {@code k}.
+     * @param n the upper bound for {@code k}.
      * 
      * @return {@code k}.
      */
-    protected static BigInteger checkUpperBound(BigInteger k, BigInteger max) {
-        if (k.compareTo(max) > 0) {
+    protected static BigInteger checkUpperBound(BigInteger k, BigInteger n) {
+        if (k.compareTo(n) > 0) {
             throw new IllegalArgumentException(
                     String.format(
                             "k is too large: %d. Must be at most %d.",
                             k,
-                            max));
+                            n));
         }
         
         return k;

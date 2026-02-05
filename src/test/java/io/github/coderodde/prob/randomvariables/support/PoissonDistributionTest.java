@@ -11,7 +11,7 @@ public class PoissonDistributionTest {
             new PoissonDistribution(BigDecimal.valueOf(1.631));
     
     @Test
-    public void testGetProbabilityMass() {
+    public void getProbabilityMass() {
         assertEquals(
                 0.1957,
                 dist.getProbabilityMass(BigInteger.ZERO).doubleValue(),
