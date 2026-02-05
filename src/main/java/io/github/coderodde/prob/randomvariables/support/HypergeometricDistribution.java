@@ -35,9 +35,11 @@ public class HypergeometricDistribution
         BigInteger numerator2  = binomial(N.subtract(K), n.subtract(k));
         BigInteger denominator = binomial(N, n);
         BigInteger numerator   = numerator1.multiply(numerator2);
-        BigInteger result      = numerator.divide(denominator);
         
-        return new BigDecimal(result);
+        BigDecimal num = new BigDecimal(numerator);
+        BigDecimal den = new BigDecimal(denominator);
+        
+        return num.divide(den);
     }
 
     private void checkParameters() {
