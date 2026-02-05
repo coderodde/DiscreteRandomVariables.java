@@ -120,6 +120,17 @@ public abstract class DiscreteRandomVariableDistribution {
      * @return the binomial {@code n} over {@code k}.
      */
     public static BigInteger binomial(BigInteger n, BigInteger k) {
+        if (n.compareTo(BigInteger.ZERO) < 0) {
+            throw new IllegalArgumentException(
+                    String.format(
+                            "n (%s) is below zero. Must be at least zero.",
+                            n));
+        }
+        
+        if (k.compareTo(BigInteger.ZERO) < 0 || k.compareTo(n) > 0) {
+            return BigInteger.ZERO;
+        }
+        
         if (n.equals(BigInteger.ZERO) || k.equals(BigInteger.ZERO)) {
             return BigInteger.ONE;
         }
