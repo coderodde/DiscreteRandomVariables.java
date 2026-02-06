@@ -32,4 +32,9 @@ public class PoissonDistributionTest {
     public void checkLambda() {
         new PoissonDistribution(BigDecimal.ZERO);
     }
+    
+    @Test
+    public void getLambda() {
+        assertEquals(BigDecimal.valueOf(1.631), dist.getLambda());
+    }
 }

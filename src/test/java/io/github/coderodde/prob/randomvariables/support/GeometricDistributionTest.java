@@ -28,4 +28,14 @@ public class GeometricDistributionTest {
                 BigDecimal.valueOf(0.3 * 0.3 * 0.3 * 0.7), 
                 dist.getProbabilityMass(BigInteger.valueOf(3)));
     }
+    
+    @Test
+    public void getSuccessProbability() {
+        assertEquals(BigDecimal.valueOf(0.7), dist.getSuccessProbability());
+    }
+    
+    @Test
+    public void getFailureProbability() {
+        assertEquals(BigDecimal.valueOf(0.3), dist.getFailureProbability());
+    }
 }

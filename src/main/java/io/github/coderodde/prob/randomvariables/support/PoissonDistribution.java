@@ -39,6 +39,15 @@ public class PoissonDistribution extends DiscreteRandomVariableDistribution {
         
         return term1.multiply(term2, MC).divide(new BigDecimal(factorial), MC);    
     }
+    
+    /**
+     * Returns the {@code lambda} parameter.
+     * 
+     * @return {@code lambda} parameter.
+     */
+    public BigDecimal getLambda() {
+        return lambda;
+    }
 
     /**
      * Checks the validity of the lambda parameter.

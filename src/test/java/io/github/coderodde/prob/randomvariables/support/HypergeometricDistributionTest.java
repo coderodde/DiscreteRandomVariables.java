@@ -21,6 +21,21 @@ public class HypergeometricDistributionTest {
                 0.01);
     }
     
+    @Test
+    public void getN() {
+        assertEquals(BigInteger.valueOf(10), dist.getN());
+    }
+    
+    @Test
+    public void getK() {
+        assertEquals(BigInteger.valueOf(4), dist.getK());
+    }
+    
+    @Test
+    public void getn() {
+        assertEquals(BigInteger.valueOf(3), dist.getn());
+    }
+    
     @Test(expected = IllegalArgumentException.class)
     public void nLessThanZero() {
         new HypergeometricDistribution(

@@ -29,7 +29,12 @@ public class BinomialDistribution extends DiscreteRandomVariableDistribution {
         checkUpperBound(k, n);
         BigDecimal factor = new BigDecimal(binomial(n, k));
         BigDecimal a = p.pow(k.intValue());
-        BigDecimal b = (BigDecimal.ONE.subtract(p)).pow(n.intValue() - k.intValue());
+        BigDecimal b =
+                BigDecimal
+                        .ONE
+                        .subtract(p)
+                        .pow(n.intValue() - k.intValue());
+        
         return factor.multiply(a).multiply(b);
     }
 

@@ -28,22 +28,20 @@ public abstract class DiscreteRandomVariableDistribution {
             String exceptionMessage = 
                 String.format(
                     "The input success probability is too small: %f. Must " + 
-                    "be whiting range (0, 1).",
+                    "be whithin range (0, 1).",
                     p);
             
             throw new IllegalArgumentException(exceptionMessage);
-            
         }
         
         if (p.compareTo(BigDecimal.ONE) >= 0) {
             String exceptionMessage = 
                 String.format(
                     "The input success probability is too large: %f. Must " + 
-                    "be whiting range (0, 1).",
+                    "be within range (0, 1).",
                     p);
             
             throw new IllegalArgumentException(exceptionMessage);
-            
         }
         
         return p;

@@ -41,6 +41,33 @@ public class HypergeometricDistribution
         
         return num.divide(den);
     }
+    
+    /**
+     * Return the {@code N} parameter.
+     * 
+     * @return {@code N}. 
+     */
+    public BigInteger getN() {
+        return N;
+    }
+    
+    /**
+     * Return the {@code K} parameter.
+     * 
+     * @return {@code K}. 
+     */
+    public BigInteger getK() {
+        return K;
+    }
+    
+    /**
+     * Return the {@code n} parameter.
+     * 
+     * @return {@code n}. 
+     */
+    public BigInteger getn() {
+        return n;
+    }
 
     /**
      * Checks the sanity of the given parameters.

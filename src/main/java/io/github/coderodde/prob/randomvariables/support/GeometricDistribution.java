@@ -28,4 +28,22 @@ public class GeometricDistribution extends DiscreteRandomVariableDistribution {
         
         return failureProbability.pow(k.intValue()).multiply(p);
     }
+    
+    /**
+     * Returns the probability of a successful trial.
+     * 
+     * @return the probability of success. 
+     */
+    public BigDecimal getSuccessProbability() {
+        return p;
+    }
+
+    /**
+     * Returns the probability of a unsuccessful trial.
+     * 
+     * @return the probability of failure. 
+     */
+    public BigDecimal getFailureProbability() {
+        return BigDecimal.ONE.subtract(p);
+    }
 }
