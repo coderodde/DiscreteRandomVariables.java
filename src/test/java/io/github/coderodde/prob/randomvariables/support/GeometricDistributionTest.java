@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class GeometricDistributionTest {
     
     private final GeometricDistribution dist = 
-            new GeometricDistribution(BigDecimal.valueOf(0.7));
+              new GeometricDistribution(0.7);
     
     @Test
     public void getProbabilityMassBigInteger() {

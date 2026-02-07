@@ -13,11 +13,27 @@ public class BinomialDistribution extends DiscreteRandomVariableDistribution {
     private final BigDecimal p;
     private final BigInteger n;
     
+    /**
+     * Constructs this binomial distribution.
+     * 
+     * @param n total number of trials.
+     * @param p the probability of a successful event.
+     */
     public BinomialDistribution(BigInteger n, BigDecimal p) {
         Objects.requireNonNull(n, "The input number of trials (n) is null.");
         Objects.requireNonNull(p, "The input success probability (p) is null.");
         this.n = checkNumberOfTrials(n);
         this.p = checkSuccessProbability(p);
+    }
+    
+    /**
+     * Constructs this binomial distribution.
+     * 
+     * @param n total number of trials.
+     * @param p the probability of a successful event.
+     */
+    public BinomialDistribution(long n, double p) {
+        this(BigInteger.valueOf(n), BigDecimal.valueOf(p));
     }
     
     /**

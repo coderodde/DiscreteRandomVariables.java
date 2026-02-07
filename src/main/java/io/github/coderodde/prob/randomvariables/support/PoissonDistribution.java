@@ -17,6 +17,11 @@ public class PoissonDistribution extends DiscreteRandomVariableDistribution {
     
     private final BigDecimal lambda;
     
+    /**
+     * Constructs this Poisson distribution.
+     * 
+     * @param lambda the distribution parameter.
+     */
     public PoissonDistribution(BigDecimal lambda) {
         this.lambda = 
                 Objects.requireNonNull(
@@ -24,6 +29,15 @@ public class PoissonDistribution extends DiscreteRandomVariableDistribution {
                         "The lambda parameter is null.");
         
         checkLambda(lambda);
+    }
+    
+    /**
+     * Constructs this Poisson distribution.
+     * 
+     * @param lambda the distribution parameter.
+     */
+    public PoissonDistribution(double lambda) {
+        this(BigDecimal.valueOf(lambda));
     }
     
     /**

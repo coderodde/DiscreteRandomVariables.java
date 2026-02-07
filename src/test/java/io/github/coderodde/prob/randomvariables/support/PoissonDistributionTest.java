@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class PoissonDistributionTest {
     
     private final PoissonDistribution dist = 
-            new PoissonDistribution(BigDecimal.valueOf(1.631));
+              new PoissonDistribution(1.631);
     
     @Test
     public void getProbabilityMassBigInteger() {

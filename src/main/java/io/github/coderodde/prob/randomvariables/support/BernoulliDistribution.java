@@ -25,6 +25,16 @@ public class BernoulliDistribution extends DiscreteRandomVariableDistribution {
         Objects.requireNonNull(p, "The input success probability is null.");
         this.p = checkSuccessProbability(p);
     }
+    
+    /**
+     * Constructs this Bernoulli distribution with the success probability of 
+     * {@code p}.
+     * 
+     * @param p the probability of success. 
+     */
+    public BernoulliDistribution(double p) {
+        this(BigDecimal.valueOf(p));
+    }
 
     /**
      * Returns the probability of success.

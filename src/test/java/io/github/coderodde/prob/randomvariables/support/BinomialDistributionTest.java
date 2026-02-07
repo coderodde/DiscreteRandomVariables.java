@@ -11,7 +11,8 @@ public class BinomialDistributionTest {
     private static final BigDecimal p = BigDecimal.valueOf(0.3);
     private static final BigInteger n = BigInteger.valueOf(4);
     
-    private final BinomialDistribution dist = new BinomialDistribution(n, p);
+    private final BinomialDistribution dist =
+              new BinomialDistribution(n.longValue(), p.doubleValue());
     
     @Test
     public void getProbabilityMassBigInteger() {

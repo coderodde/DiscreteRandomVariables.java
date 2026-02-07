@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class BernoulliDistributionTest {
     
     private final BernoulliDistribution dist =
-              new BernoulliDistribution(BigDecimal.valueOf(0.6));
+              new BernoulliDistribution(0.6);
     
     @Test
     public void getProbabilityMassBigInteger() {

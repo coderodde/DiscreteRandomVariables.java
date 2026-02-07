@@ -12,9 +12,23 @@ public class GeometricDistribution extends DiscreteRandomVariableDistribution {
 
     private final BigDecimal p;
     
+    /**
+     * Constructs this geometric distribution.
+     * 
+     * @param p the probability of a successful event. 
+     */
     public GeometricDistribution(BigDecimal p) {
         Objects.requireNonNull(p, "The input success probability is null.");
         this.p = checkSuccessProbability(p);
+    }
+    
+    /**
+     * Constructs this geometric distribution.
+     * 
+     * @param prob the probability of a successful event. 
+     */
+    public GeometricDistribution(double prob) {
+        this(BigDecimal.valueOf(prob));
     }
     
     /**

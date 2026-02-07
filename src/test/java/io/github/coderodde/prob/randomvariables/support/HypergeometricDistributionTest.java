@@ -11,7 +11,9 @@ public class HypergeometricDistributionTest {
     private static final BigInteger n = BigInteger.valueOf(3);
     
     private final HypergeometricDistribution dist = 
-            new HypergeometricDistribution(N, K, n);
+              new HypergeometricDistribution(N.longValue(), 
+                                             K.longValue(), 
+                                             n.longValue());
     
     @Test
     public void getProbabilityMassBigInteger() {

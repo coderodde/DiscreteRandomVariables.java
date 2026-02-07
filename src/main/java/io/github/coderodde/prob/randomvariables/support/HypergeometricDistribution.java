@@ -15,6 +15,13 @@ public class HypergeometricDistribution
     private final BigInteger K;
     private final BigInteger n;
     
+    /**
+     * Constructs this hypergeometric distribution.
+     * 
+     * @param N total number of trials.
+     * @param K total number of target trials.
+     * @param n total number of draws.
+     */
     public HypergeometricDistribution(BigInteger N,
                                       BigInteger K,
                                       BigInteger n) {
@@ -24,6 +31,21 @@ public class HypergeometricDistribution
         this.n = Objects.requireNonNull(n, "The k parameter is null.");
         
         checkParameters();
+    }
+    
+    /**
+     * Constructs this hypergeometric distribution.
+     * 
+     * @param N total number of trials.
+     * @param K total number of target trials.
+     * @param n total number of draws.
+     */
+    public HypergeometricDistribution(long N,
+                                      long K,
+                                      long n) {
+        this(BigInteger.valueOf(N),
+             BigInteger.valueOf(K),
+             BigInteger.valueOf(n));
     }
     
     /**
