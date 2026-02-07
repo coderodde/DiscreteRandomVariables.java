@@ -14,8 +14,13 @@ public class BinomialDistributionTest {
     private final BinomialDistribution dist = new BinomialDistribution(n, p);
     
     @Test
-    public void getProbabilityMass() {
+    public void getProbabilityMassBigInteger() {
         System.out.println(dist.getProbabilityMass(BigInteger.valueOf(2)));
+    }
+    
+    @Test
+    public void getProbabilityMassInt() {
+        System.out.println(dist.getProbabilityMass(2));
     }
 
     @Test

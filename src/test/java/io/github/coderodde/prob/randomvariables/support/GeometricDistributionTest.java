@@ -11,7 +11,7 @@ public class GeometricDistributionTest {
             new GeometricDistribution(BigDecimal.valueOf(0.7));
     
     @Test
-    public void getProbabilityMass() {
+    public void getProbabilityMassBigInteger() {
         assertEquals(
                 BigDecimal.valueOf(0.7), 
                 dist.getProbabilityMass(BigInteger.ZERO));
@@ -27,6 +27,25 @@ public class GeometricDistributionTest {
         assertEquals(
                 BigDecimal.valueOf(0.3 * 0.3 * 0.3 * 0.7), 
                 dist.getProbabilityMass(BigInteger.valueOf(3)));
+    }
+    
+    @Test
+    public void getProbabilityMassInt() {
+        assertEquals(
+                BigDecimal.valueOf(0.7), 
+                dist.getProbabilityMass(0));
+        
+        assertEquals(
+                BigDecimal.valueOf(0.3 * 0.7), 
+                dist.getProbabilityMass(1));
+        
+        assertEquals(
+                BigDecimal.valueOf(0.3 * 0.3 * 0.7), 
+                dist.getProbabilityMass(2));
+        
+        assertEquals(
+                BigDecimal.valueOf(0.3 * 0.3 * 0.3 * 0.7), 
+                dist.getProbabilityMass(3));
     }
     
     @Test

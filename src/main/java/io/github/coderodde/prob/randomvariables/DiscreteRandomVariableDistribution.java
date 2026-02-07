@@ -9,12 +9,25 @@ import java.math.BigInteger;
 public abstract class DiscreteRandomVariableDistribution {
 
     /**
-     * Computes the probability density of this discrete random variable.
+     * Computes the probability density of this discrete random variable via
+     * {@link java.math.BigInteger} parameter.
      * 
      * @param k the parameter.
      * @return the probability density.
      */
     public abstract BigDecimal getProbabilityMass(BigInteger k);
+    
+    
+    /**
+     * Computes the probability density of this discrete random variable via an
+     * {@code int} parameter.
+     * 
+     * @param k the parameter.
+     * @return the probability density.
+     */
+    public BigDecimal getProbabilityMass(int k) {
+        return getProbabilityMass(BigInteger.valueOf(k));
+    }
 
     /**
      * Checks that the input provability is within range {@code (0, 1)}.

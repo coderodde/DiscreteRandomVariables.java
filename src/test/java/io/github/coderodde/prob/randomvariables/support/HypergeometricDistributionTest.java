@@ -14,10 +14,18 @@ public class HypergeometricDistributionTest {
             new HypergeometricDistribution(N, K, n);
     
     @Test
-    public void getProbabilityMass() {
+    public void getProbabilityMassBigInteger() {
         assertEquals(
                 0.3, 
                 dist.getProbabilityMass(BigInteger.valueOf(2)).doubleValue(), 
+                0.01);
+    }
+    
+    @Test
+    public void getProbabilityMassInt() {
+        assertEquals(
+                0.3, 
+                dist.getProbabilityMass(2).doubleValue(), 
                 0.01);
     }
     

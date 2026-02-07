@@ -11,7 +11,7 @@ public class BernoulliDistributionTest {
               new BernoulliDistribution(BigDecimal.valueOf(0.6));
     
     @Test
-    public void getProbabilityMass() {
+    public void getProbabilityMassBigInteger() {
         
         assertEquals(
                 BigDecimal.valueOf(0.6), 
@@ -20,6 +20,18 @@ public class BernoulliDistributionTest {
         assertEquals(
                 BigDecimal.valueOf(0.4), 
                 dist.getProbabilityMass(BigInteger.ZERO));
+    }
+    
+    @Test
+    public void getProbabilityMassInt() {
+        
+        assertEquals(
+                BigDecimal.valueOf(0.6), 
+                dist.getProbabilityMass(1));
+        
+        assertEquals(
+                BigDecimal.valueOf(0.4), 
+                dist.getProbabilityMass(0));
     }
     
     @Test
